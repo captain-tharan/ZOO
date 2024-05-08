@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Adventure Game</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        /* Customize other styles as needed */
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Zoo Adventure Game!</h1>
+    <p>Catch animals and earn points:</p>
+
+    <div id="game-container">
+        <div class="animal" data-animal="tiger">🐅 Tiger</div>
+        <div class="animal" data-animal="lion">🦁 Lion</div>
+        <div class="animal" data-animal="rhino">🦏 Rhino</div>
+        <div class="animal" data-animal="elephant">🐘 Elephant</div>
+    </div>
+
+    <p id="points">Points: 0</p>
+
+    <script>
+        const animals = document.querySelectorAll('.animal');
+        let points = 0;
+
+        animals.forEach(animal => {
+            animal.addEventListener('click', () => {
+                const animalName = animal.getAttribute('data-animal');
+                points += 10; // You can adjust the points based on the animal caught
+                document.getElementById('points').textContent = `Points: ${points}`;
+                alert(`You caught a ${animalName}! +10 points`);
+            });
+        });
+    </script>
+</body>
+</html>
